@@ -3,7 +3,9 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <link rel="stylesheet" href="responce.css">
+    <link rel="stylesheet" href="index.css">
+    <script src="./script/jquery-3.5.1.min.js"></script>
+    <script src="/script/script.js"></script>
     <title></title>
   </head>
   <body>
@@ -15,7 +17,12 @@
 </h1>
   </a>
 </div>
-<div class="header-nav">
+<a class="nav-btn">
+<div></div>
+<div></div>
+<div></div>
+</a>
+<nav class="header-nav">
   <ul>
     <li>
 <a href="#">トップページ</a>
@@ -33,10 +40,10 @@
 <a href="#">お問い合わせ</a>
     </li>
   </ul>
-</div>
-<div class="header-manu">
-<img src="responimg/Menu.png" alt="">
-</div>
+</nav>
+
+
+
 </header>
 
 
@@ -274,6 +281,14 @@
 </div>
 </div>
 
+<!-- ボタン -->
+<div class="btn">
+<a class="bottom">
+<img src="responimg/yazirusi.png" alt="">
+</a>
+</div>
+
+
 <footer class="footer">
 <div class="footer-with">
   <div class="footer-none">
@@ -332,6 +347,8 @@
 </div>
   </div>
 </div>
+
+
 <div class="footer-name">
 <div class="footer-name__with">
 <div class="footer-name__text">
@@ -348,7 +365,29 @@
 
 
 
+<script>
+$('.nav-btn').on('click',function(){
+  if( $(this).hasClass('active') ){
+    $(this).removeClass('active');
+    $('.header-nav').addClass('close').removeClass('open');
+  }
+    else {
+    $(this).addClass('active');
+    $('.header-nav').addClass('open').removeClass('close');
+  }
+});
 
+// scroll
+$(function(){
+  $('.bottom').click(function(){
+    $('html').animate({scrollTop: 0});
+  });
+});
+
+
+
+
+</script>
 
   </body>
 </html>
